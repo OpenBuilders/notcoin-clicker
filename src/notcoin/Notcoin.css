@@ -1,0 +1,94 @@
+.root {
+  color: #fff;
+}
+@media (min-height: 700px) {
+  .root {
+    margin: auto auto 140px;
+  }
+}
+.container {
+  perspective: 400px;
+}
+.notcoin {
+  width: 300px;
+  min-width: 300px;
+  height: 300px;
+  min-height: 300px;
+  border-radius: 50%;
+  background-image: url('../notcoin.png');
+  font-size: 72px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 280px;
+  background-size: cover;
+  margin: 0 auto;
+  transition: transform 0.1s ease-out;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  touch-action: none;
+  user-zoom: fixed;
+  transform-origin: center;
+  will-change: transform;
+  position: relative;
+  z-index: 1;
+}
+
+.sleep {
+  filter: brightness(0.8) grayscale(1);
+}
+.cooldown {
+  width: 300px;
+  height: 300px;
+  transform: rotateY(-180deg) rotateZ(-90deg);
+  &Container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    text-align: center;
+  }
+  &Number {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    color: rgba(255, 255, 255, 0.35);
+    font-size: 66px;
+    font-weight: 900;
+    line-height: 290px;
+    width: 300px;
+  }
+  &Circle {
+    stroke-dasharray: 900px;
+    stroke-dashoffset: 900px;
+    stroke-linecap: round;
+    stroke-width: 17px;
+    stroke: rgba(255, 255, 255, 0.35);
+    fill: none;
+    animation: countdown 10s linear forwards;
+  }
+}
+
+.clickAmount {
+  top: 0;
+  left: 0;
+  position: absolute;
+  font-size: 46px;
+  font-weight: bold;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+@keyframes countdown {
+  from {
+    stroke-dashoffset: 900px;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
